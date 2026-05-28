@@ -76,7 +76,8 @@
 
 #let skills_block(items) = {
   for item in items {
-    block(below: 0.2em)[
+    block(width: 100%, below: 0.38em)[
+      #set par(leading: 0.56em)
       #text(weight: 650, item.label + ":") #h(0.3em) #item.items
     ]
   }

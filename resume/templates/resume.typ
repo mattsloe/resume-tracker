@@ -16,7 +16,8 @@
 
 #set par(
   justify: false,
-  leading: 0.62em,
+  leading: 0em,
+  spacing: 0.5em,
 )
 
 #set heading(numbering: none)
@@ -29,9 +30,11 @@
 
 #let section_heading(title) = [
   #v(0.95em)
-  #text(size: 8.2pt, weight: 700, tracking: 0.08em, fill: muted)[#title]
-  #v(0.18em)
-  #line(length: 100%, stroke: 0.7pt + rule)
+  #align(center)[
+    #text(size: 8.2pt, weight: 700, tracking: 0.08em, fill: muted)[#title]
+    #v(0.18em)
+    #line(length: 100%, stroke: 0.7pt + rule)
+  ]
   #v(0.38em)
 ]
 
@@ -51,7 +54,9 @@
 
 #let summary_block(paragraphs) = {
   for paragraph in paragraphs {
-    block(below: 0.35em)[#paragraph]
+    block(width: 100%)[
+      #paragraph
+    ]
   }
 }
 
@@ -76,8 +81,7 @@
 
 #let skills_block(items) = {
   for item in items {
-    block(width: 100%, below: 0.38em)[
-      #set par(leading: 0.56em)
+    block(width: 100%)[
       #text(weight: 650, item.label + ":") #h(0.3em) #item.items
     ]
   }

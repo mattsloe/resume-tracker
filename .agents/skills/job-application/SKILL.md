@@ -61,6 +61,12 @@ After intake:
 4. Draft or update `tailored_resume.md` from `resume/master_resume.md`.
 5. Add `cover_letter.typ` when useful for the role or application channel.
 
+## Artifacts
+
+- Generate application deliverables as PDFs only unless the user explicitly asks for another format.
+- Do not create PNG previews, screenshots, or rasterized resume/cover-letter images during the job-application workflow. PDF outputs have been sufficient for this repository.
+- Use the repo build path for resumes and Typst cover letters, then report the PDF paths to the user.
+
 ## Master Resume Rule
 
 Treat `resume/master_resume.md` as the long-form source inventory.

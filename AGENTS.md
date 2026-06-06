@@ -2,7 +2,9 @@
 
 This repository is used to manage tailored resumes, cover letters, and application tracking. Follow this workflow when helping with a job application.
 
-For a guided, repeatable application flow, use the repo skill `$job-application`. This is the preferred entry point for short mobile prompts such as a job link plus a few fit notes.
+For a guided, repeatable application flow, use the repo skill `$job-application`. This is the preferred entry point when the user explicitly asks to apply, tailor materials, or start the application workflow.
+
+If the user shares job links as leads, prospects, or jobs to review without explicitly asking to apply, do not start the `$job-application` workflow, create branches, create Notion cards, or tailor materials. Treat the request as lead generation or lightweight triage unless the user asks to begin an application.
 
 ## Source of Truth
 

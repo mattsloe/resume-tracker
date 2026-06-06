@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Job Leads"
+  short_description: "Research and triage job leads"
+  default_prompt: "Use $create-job-leads to research these job links and recommend which ones are worth applying to."

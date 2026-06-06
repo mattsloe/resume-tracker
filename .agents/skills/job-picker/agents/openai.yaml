@@ -1,0 +1,4 @@
+interface:
+  display_name: "Job Picker"
+  short_description: "Pick the next Notion job to apply to"
+  default_prompt: "Use $job-picker to rank my Notion job cards and tell me what I should apply to next."

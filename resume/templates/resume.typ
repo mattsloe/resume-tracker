@@ -96,6 +96,7 @@
   projects,
   skills,
   education,
+  pagebreak_before_projects: false,
 ) = [
   #resume_header(name, headline, contact)
 
@@ -112,6 +113,9 @@
   ]
 
   #if projects.len() > 0 [
+    #if pagebreak_before_projects [
+      #pagebreak()
+    ]
     #section_heading("PROJECTS")
     #for item in projects {
       entry_block(item)

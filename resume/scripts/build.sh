@@ -196,10 +196,16 @@ EXPERIENCE_BLOCK=""
 PROJECTS_BLOCK=""
 SKILLS_BLOCK=""
 EDUCATION_BLOCK=""
+PAGEBREAK_BEFORE_PROJECTS="false"
 
 while IFS= read -r raw_line || [[ -n "$raw_line" ]]; do
   line="${raw_line%$'\r'}"
   trimmed="$(trim "$line")"
+
+  if [[ "$trimmed" == "<!-- pagebreak-before: Projects -->" ]]; then
+    PAGEBREAK_BEFORE_PROJECTS="true"
+    continue
+  fi
 
   if [[ "$trimmed" == \#\ * && -z "$NAME" ]]; then
     NAME="$(trim "${trimmed#\# }")"
@@ -278,6 +284,7 @@ ${PROJECTS_BLOCK}  ),
 ${SKILLS_BLOCK}  ),
   (
 ${EDUCATION_BLOCK}  ),
+  pagebreak_before_projects: $PAGEBREAK_BEFORE_PROJECTS,
 )
 EOF
 

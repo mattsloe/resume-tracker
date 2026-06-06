@@ -163,6 +163,14 @@ Helpful commit boundaries:
 
 Use the Notion `Job Applications` page as the source of truth for tracking.
 
+For a guided workflow, start a Codex prompt with:
+
+```text
+$job-application <job link or company + role>
+```
+
+This repo includes a `job-application` skill for short mobile-friendly starts. You can add fit notes later in the same thread.
+
 Before creating a job branch:
 
 1. Confirm the company, role title, and application source.

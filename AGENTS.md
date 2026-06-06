@@ -2,6 +2,8 @@
 
 This repository is used to manage tailored resumes, cover letters, and application tracking. Follow this workflow when helping with a job application.
 
+For a guided, repeatable application flow, use the repo skill `$job-application`. This is the preferred entry point for short mobile prompts such as a job link plus a few fit notes.
+
 ## Source of Truth
 
 - The Notion `Job Applications` page is the source of truth for application tracking.

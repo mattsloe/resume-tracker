@@ -8,6 +8,8 @@ Brings a mix of technical training, strong writing, and lived knowledge of housi
 
 ## Experience
 ### Future Generations Collaborative | Partner | Portland, OR | May 2021-September 2024
+- Contributed to writing for the Tribal Maternal, Infant, and Early Childhood Home Visiting (MIECHV) grant supporting the early childhood program.
+- Helped with yearly reporting and data collection connected to grant-funded program requirements and accountability.
 - Contributed to community-based research and education work focused on Indigenous data sovereignty and housing equity.
 - Helped create play spaces and support programming for families through the Future Generations education model.
 - Supported planning and outreach connected to Barbie's Village, a housing initiative for women and families escaping domestic violence.
@@ -29,9 +31,9 @@ Brings a mix of technical training, strong writing, and lived knowledge of housi
 ## Skills
 Programming: C; C++; JavaScript; TypeScript; React; Python; HTML; SQL
 Computer Science: Systems programming; Data structures; Digital circuits; SQL databases; Continuous integration environments
-Community & Research: Community organizing; Policy research; Housing advocacy; Land use advocacy; Participatory action research; Grants and Grant writing; Transportation Advocacy
+Community & Research: Community organizing; Policy research; Housing advocacy; Land use advocacy; Participatory action research; Grant writing; Federal grant reporting support; Transportation advocacy
 Tools: Google Suite; Slack; Trello; Canva; Instagram
-Strengths: Strong writing; Research; Public speaking; Event coordination; Coalition-building; Adapting quickly to varied team environments
+Strengths: Strong writing; Research; Public speaking; Event coordination; Coalition-building; Data collection; Adapting quickly to varied team environments
 
 ## Education
 ### Portland State University | B.S. in Computer Science | Portland, OR | Winter 2025

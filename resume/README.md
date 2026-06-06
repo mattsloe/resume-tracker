@@ -157,6 +157,44 @@ Helpful commit boundaries:
 - one commit for job analysis
 - one commit for resume tailoring
 - one commit for final pre-submit polish
+- separate commits for any reusable `master_resume.md` improvements that should be cherry-picked back to `main`
+
+## Application Workflow
+
+Use the Notion `Job Applications` page as the source of truth for tracking.
+
+Before creating a job branch:
+
+1. Confirm the company, role title, and application source.
+2. Check whether a Notion card already exists. Create one if it does not.
+3. If the listing came from Handshake, Indeed, LinkedIn, or another aggregator, look for the canonical posting on the company's careers site.
+4. Capture any personalized fit details the user gives, such as why this role is a strong match.
+5. Decide whether the application likely needs a cover letter or email draft.
+
+After intake, create a job branch and folder:
+
+```bash
+git checkout -b resume/acme-product-manager
+mkdir -p jobs/acme_product_manager
+```
+
+Then iterate on:
+
+- `jobs/<company>_<role>/job_posting.md`
+- `jobs/<company>_<role>/tailored_resume.md`
+- `jobs/<company>_<role>/cover_letter.typ`, when useful
+
+If tailoring uncovers a reusable improvement for `master_resume.md`, commit it separately from the job-specific files. That keeps the master-resume commit easy to cherry-pick back to `main` after the application is complete.
+
+When the materials are final, answer the "how do I apply?" step with:
+
+- the best application URL or email path
+- the exact materials to submit
+- an application email draft when applicable
+- any manual fields the user must complete
+- the Notion status update that should happen
+
+After submission, return to `main` when requested and cherry-pick only reusable master-resume commits. Leave job-specific application history on the application branch unless there is a reason to merge it.
 
 ## Suggested AI Workflows
 

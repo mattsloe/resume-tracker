@@ -28,6 +28,12 @@ Brings a mix of technical training, strong writing, and lived knowledge of housi
 - Support daily service operations while maintaining clear communication with coworkers and adapting to changing floor needs.
 - Balance customer service, attention to detail, and fast execution during busy shifts.
 
+## Projects
+### Bar Inventory App | AI-assisted inventory workflow | 2026
+- Built a voice-to-inventory app that converts unstructured spoken inventory notes into cleaner inventory data for bar operations.
+- Designed a command-driven parsing workflow to match voice transcription output against inventory sheet items while reducing AI API calls by roughly 80%.
+- Combined TypeScript, React, Python, SQL, AI-assisted workflows, data cleaning, and firsthand hospitality operations experience.
+
 ## Skills
 Programming: C; C++; JavaScript; TypeScript; React; Python; HTML; SQL
 Computer Science: Systems programming; Data structures; Digital circuits; SQL databases; Continuous integration environments

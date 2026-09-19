@@ -115,8 +115,29 @@ Use `strategy.md` as the actual source of truth while drafting: pull its keyword
 ## Artifacts
 
 - Generate application deliverables as PDFs only unless the user explicitly asks for another format.
-- Do not create PNG previews, screenshots, or rasterized resume/cover-letter images during the job-application workflow. PDF outputs have been sufficient for this repository.
 - Use the repo build path for resumes and Typst cover letters, then report the PDF paths to the user.
+- Do not deliver or commit a PNG or other rasterized copy of a resume or cover letter. The PDF is the artifact the user submits; a rasterized version is not an application deliverable and does not belong in the repo.
+
+### Verify layout before reporting a build as done
+
+Render the built PDF to an image and actually look at it. This is
+verification, not a deliverable: write it to a scratch directory outside
+the repository and leave it there.
+
+```bash
+pdftoppm -png -r 100 resume/exports/<file>.pdf "$SCRATCH_DIR"/preview
+pdfinfo resume/exports/<file>.pdf   # expect 612 x 792 pts (letter)
+```
+
+Text extraction is not sufficient and must not be used to answer a layout
+question. Two real bugs survived multiple rounds of text-based checking:
+every resume rendered on A4 rather than Letter, and whole entries jumped
+to page two with visible room left. Both were obvious in one screenshot.
+See "Verify formatting with real screenshots, not text extraction" in
+`resume/README.md` for the details and the fixes.
+
+Check with a screenshot before claiming a document fits one page, that its
+spacing looks right, or that nothing is crowded.
 
 ## Master Resume Rule
 

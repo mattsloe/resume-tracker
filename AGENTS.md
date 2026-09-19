@@ -66,8 +66,12 @@ If the user has not provided optional personalized details, proceed with the res
 - Prefer branch names like `resume/<company>-<role>` or `<company>-application`, matching the repository's existing style when present.
 - Create a job folder under `resume/jobs/<company>_<role>/`.
 - Store the verified posting in `job_posting.md`.
-- Create or update `tailored_resume.md`.
-- Add `cover_letter.typ` when the role needs one.
+- Write `strategy.md` before drafting resume/cover-letter content: map the
+  posting's required/preferred qualifications against truthful evidence,
+  and identify the truthful ATS keywords to carry through. See the
+  `job-application` skill's Strategy section for the expected shape.
+- Create or update `tailored_resume.md`, guided by `strategy.md`.
+- Add `cover_letter.typ` when the role needs one, also guided by `strategy.md`.
 
 ## Master Resume Changes
 

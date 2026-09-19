@@ -279,8 +279,10 @@ generating a tailored resume or cover letter.
   a 2-3 line summary, 2 experience entries (1-2 bullets each), one
   Projects entry (1 tight bullet), a 2-3 line Skills block, and Education
   with no bullets — on one page. Anything denser than that will likely
-  spill to a second page; trim content rather than re-loosening the
-  template.
+  spill to a second page; trim low-signal content rather than
+  re-loosening the template — but see "ATS-targeted roles" below before
+  cutting anything `strategy.md` flagged as required-qualification
+  evidence.
 - Don't restate the same facts twice across sections. If Skills already
   lists the relevant coursework/tools (e.g. "SQL databases; Digital
   circuits"), don't also add an Education coursework bullet — it's the
@@ -289,6 +291,25 @@ generating a tailored resume or cover letter.
   one longer combined bullet over two short ones — each additional
   bullet costs a full line plus list spacing, and entry blocks don't
   break cleanly across a page boundary.
+
+### ATS-targeted roles (technical screening, keyword-sensitive postings)
+
+One page is a default, not a hard rule. For a role that will run resumes
+through automated keyword screening (most technical roles with a formal
+posting), a sparse one-pager that dropped required-qualification keywords
+to save space is worse than a clean two-pager that keeps them:
+
+- Build `strategy.md` first (see the `job-application` skill) and pull its
+  keyword list into Summary, Experience/Projects, and Skills verbatim
+  where truthful — don't paraphrase away the posting's exact terms (e.g.
+  write "relational database" if that's the posting's phrase, even
+  alongside "SQL").
+- Expand the most relevant Project or Experience entry to 2-3 bullets
+  when it's carrying the bulk of the keyword match — don't compress it to
+  one bullet purely for page count.
+- If it runs to two pages, let Education (or another low-signal section)
+  fall onto page two rather than deleting a required-qualification
+  keyword to force one page.
 
 ## Notes
 

@@ -93,8 +93,24 @@ After intake:
 1. Create one branch for the application, using the repository's existing branch style.
 2. Create `resume/jobs/<company>_<role>/`.
 3. Save the posting as `job_posting.md`.
-4. Draft or update `tailored_resume.md` from `resume/master_resume.md`.
-5. Add `cover_letter.typ` when useful for the role or application channel.
+4. Write `strategy.md` (see Strategy below) before drafting anything else.
+5. Draft or update `tailored_resume.md` from `resume/master_resume.md`, guided by `strategy.md`.
+6. Add `cover_letter.typ` when useful for the role or application channel, also guided by `strategy.md`.
+
+## Strategy
+
+Write `resume/jobs/<company>_<role>/strategy.md` before drafting the tailored resume or cover letter. A resume tailored without a strategy tends to come out generic and keyword-sparse, which reads poorly to both ATS screening and a human reviewer. The strategy file should cover:
+
+- **Positioning/angle**: the honest one- or two-sentence pitch for why this candidate for this role, given what's actually true about them. Don't force a technical framing onto non-technical experience or vice versa.
+- **Required qualifications — evidence mapping**: a line per requirement in the posting, with either the truthful evidence for it or an explicit note that it's not evidenced (and therefore not claimed).
+- **Preferred qualifications — status**: same treatment, lower stakes; it's fine for most of these to be "not evidenced, omitted."
+- **ATS keyword strategy**: the posting's own vocabulary (exact phrases, not paraphrases) that are truthful to use, and where they should appear (Summary, Experience/Projects, Skills — spread naturally, not crammed into one line).
+- **Content decisions**: what to expand, what to cut, and why — e.g. "keep the Projects section detailed, it's the highest keyword-density section" or "drop X, it's not evidenced."
+- **Open items before submission**: application-form fields the resume can't carry (work authorization, salary, references, address, etc).
+
+If a required qualification can't be confirmed from `resume/master_resume.md` or prior conversation, ask the user rather than guessing or omitting silently — a missing required keyword is a real cost to ATS pass-through, and inventing one violates the no-fabrication rule.
+
+Use `strategy.md` as the actual source of truth while drafting: pull its keyword list into the resume verbatim where truthful, and don't let one-page tidiness quietly delete the keywords the strategy identified as required. If a resume runs long, cut redundant or low-signal content first (e.g. an Education coursework line that only repeats what Skills already states) before cutting anything the strategy flagged as required-qualification evidence.
 
 ## Artifacts
 
@@ -133,6 +149,7 @@ For each pass:
 Keep commits scoped where practical:
 
 - job analysis
+- strategy
 - resume tailoring
 - cover letter
 - final polish

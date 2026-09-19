@@ -1,0 +1,2 @@
+resume/exports/*.pdf
+!resume/exports/.gitkeep

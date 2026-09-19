@@ -32,7 +32,8 @@ degree.
 ## Preferred qualifications — status (do not fabricate)
 
 - Microservices, Docker, AWS — not evidenced, omitted
-- Automated testing — not evidenced, omitted
+- Automated testing — not evidenced as such; the closest true adjacent skill
+  is "Continuous integration environments" (on master_resume.md), now listed
 - Finance / brokerage / trading / blockchain — not evidenced; addressed as an
   honest gap in the cover letter, reframed as fast-learner interest
 - Jira / Confluence — not evidenced; Trello is the closest true tool (listed
@@ -59,12 +60,28 @@ systems programming.
 - Trim Experience bullets to the minimum needed for the "clear
   communication" / "fast-paced" soft-skill keywords — that section carries
   little ATS weight for a technical role.
-- Dropped the Education coursework bullet in the final draft: once Skills
-  explicitly lists systems programming, data structures, digital circuits,
-  and relational databases, the coursework line was pure duplication and
-  the only thing keeping the resume off one page.
+- Kept the Education coursework bullet: once the page-size bug was fixed the
+  resume fits on one page with room to spare, and the bullet is the only
+  place the exact phrase "SQL Databases" appears as coursework.
+- Use the exact phrase "code review" somewhere on the resume, not just
+  "reviewing AI-generated code" — the posting lists code reviews as a
+  responsibility and ATS exact-phrase matching will not equate the two.
+- Get the word "API" into the request-flow sentence, since the posting's
+  phrasing is "front end, API, services, and databases." Only the AI API
+  calls are documented, so the bullet says that rather than implying an
+  internal API layer that has not been confirmed.
+- Pull "Continuous integration environments" over from master_resume.md.
+  It is the closest truthful match to the preferred automated-testing
+  qualification and was missing from the first draft.
 - Cover letter stays narrative (lower ATS weight there), but should still
   hit Git and "relational database" by name at least once each.
+
+## Known unmet requirements (do not fabricate)
+
+- Scrum ceremonies: listed as a responsibility and an ATS keyword, but there
+  is no truthful evidence, so the word appears nowhere. Expect it as an
+  interview topic rather than a resume line.
+- Microservices / Docker / AWS: no evidence, omitted entirely.
 
 ## Open items before submission (not resume content)
 

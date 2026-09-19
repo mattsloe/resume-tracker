@@ -275,29 +275,54 @@ generating a tailored resume or cover letter.
 
 ### Resumes (one page, for early-career/concise roles)
 
-- `templates/resume.typ` section/entry spacing is tuned to fit roughly:
-  a 2-3 line summary, 2 experience entries (1-2 bullets each), one
-  Projects entry (1 tight bullet), a 2-3 line Skills block, and Education
-  with no bullets — on one page. Anything denser than that will likely
-  spill to a second page; trim low-signal content rather than
-  re-loosening the template — but see "ATS-targeted roles" below before
-  cutting anything `strategy.md` flagged as required-qualification
-  evidence.
-- Don't restate the same facts twice across sections. If Skills already
-  lists the relevant coursework/tools (e.g. "SQL databases; Digital
-  circuits"), don't also add an Education coursework bullet — it's the
-  first thing to cut when a resume runs long.
-- When a Projects entry has more to say than fits in one bullet, prefer
-  one longer combined bullet over two short ones — each additional
-  bullet costs a full line plus list spacing, and entry blocks don't
-  break cleanly across a page boundary.
+- `templates/resume.typ` renders a genuinely full one-pager comfortably: a
+  3-4 line summary, 2-3 experience entries (2 bullets each), one Projects
+  entry (2-3 bullets), a 3-4 line Skills block, and Education with a
+  coursework bullet all fit with room to spare. If a real draft still
+  doesn't fit at that density, trim low-signal content first — but see
+  "ATS-targeted roles" below before cutting anything `strategy.md` flagged
+  as required-qualification evidence.
+- Don't restate the exact same phrase twice for no reason, but deliberate
+  repetition of a truthful keyword across Education, Skills, and
+  Experience/Projects is a feature for ATS matching, not a bug — see
+  "ATS-targeted roles" below.
+
+### Verify formatting with real screenshots, not text extraction
+
+A text-extraction preview of a PDF (or a tool that returns "page 1 / page
+2" text blocks) can look identical across two builds that are visually
+very different, and can look fine even when the page size itself is
+wrong. Two real bugs shipped for a while because of this:
+
+1. Every resume this repo built was silently rendered on A4 (595x842pt)
+   instead of the Letter size (8.5x11in) configured in the template,
+   because `#set page(...)` inside an imported module doesn't apply to
+   the importing document unless it's used as a show rule
+   (`#show: page_style`, not a plain function call). Text extraction
+   never surfaced this; `pdfinfo <file>.pdf` and a rendered screenshot
+   did immediately.
+2. entry_block's title/date row used `table()`, which is atomic and
+   unbreakable — the whole entry would jump to the next page even with
+   over half an inch of visible room left. This only showed up by
+   actually rendering the page to an image and measuring where content
+   stopped versus the true margin.
+
+Before calling a layout question resolved (fits one page? spacing looks
+right? nothing crowded?), render real pixels and look at them:
+
+```bash
+pdftoppm -png -r 100 resume/exports/<file>.pdf /tmp/preview
+```
+
+Then view `/tmp/preview-1.png` (etc.) directly, and cross-check the page
+size with `pdfinfo resume/exports/<file>.pdf`. `poppler-utils` provides
+both `pdftoppm` and `pdfinfo`; install it if missing
+(`apt-get install -y poppler-utils`).
 
 ### ATS-targeted roles (technical screening, keyword-sensitive postings)
 
-One page is a default, not a hard rule. For a role that will run resumes
-through automated keyword screening (most technical roles with a formal
-posting), a sparse one-pager that dropped required-qualification keywords
-to save space is worse than a clean two-pager that keeps them:
+For a role that will run resumes through automated keyword screening
+(most technical roles with a formal posting):
 
 - Build `strategy.md` first (see the `job-application` skill) and pull its
   keyword list into Summary, Experience/Projects, and Skills verbatim
@@ -305,11 +330,11 @@ to save space is worse than a clean two-pager that keeps them:
   write "relational database" if that's the posting's phrase, even
   alongside "SQL").
 - Expand the most relevant Project or Experience entry to 2-3 bullets
-  when it's carrying the bulk of the keyword match — don't compress it to
-  one bullet purely for page count.
-- If it runs to two pages, let Education (or another low-signal section)
-  fall onto page two rather than deleting a required-qualification
-  keyword to force one page.
+  when it's carrying the bulk of the keyword match.
+- If, after using the template at its real capacity (see above), a draft
+  still doesn't fit one page, let Education (or another low-signal
+  section) fall onto page two rather than deleting a required-
+  qualification keyword to force one page.
 
 ## Notes
 

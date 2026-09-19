@@ -55,13 +55,14 @@ Important boundaries:
 
 ## Main Workflows
 
-- `$create-job-leads`: research or triage roles before deciding to apply.
-- `$job-picker`: rank existing Notion job cards and choose what to apply to next.
-- `$job-application`: create or continue an application, including Notion
+- `create-job-leads`: research or triage roles before deciding to apply.
+- `job-picker`: rank existing Notion job cards and choose what to apply to next.
+- `job-application`: create or continue an application, including Notion
   tracking, branch setup, tailored resume work, cover letters, and apply steps.
 
-These names are Codex skill triggers, but the files are regular Markdown and can
-be copied into any LLM session as instructions.
+Invoke these with your agent's syntax — `$name` in Codex, `/name` in Claude Code
+and Cursor. The files are regular Markdown and can also be copied into any LLM
+session as instructions.
 
 ## Discord Job Feed
 
@@ -78,10 +79,13 @@ Then edit `.env` locally and set:
 DISCORD_JOB_FEED_WEBHOOK_URL="https://discord.com/api/webhooks/..."
 ```
 
+In a Claude Code on the web session the variable is supplied by the environment
+instead, and no `.env` file exists — so only source it when it is actually there.
+
 Post a workflow milestone with:
 
 ```bash
-set -a; source .env; set +a
+[ -f .env ] && { set -a; . ./.env; set +a; }
 resume/scripts/discord_job_feed.sh \
   --event started \
   --company "Acme" \

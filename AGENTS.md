@@ -4,9 +4,11 @@ This repository manages job leads, tailored application materials, and applicati
 
 ## Route The Request
 
-- Use `$create-job-leads` to research, compare, or lightly triage roles. Do not create branches, Notion cards, or tailored materials during lead triage.
-- Use `$job-picker` to rank or inspect existing Notion application cards.
-- Use `$job-application` when the user chooses to apply, tailor materials, track an active application, or prepare submission instructions.
+Skill names are written bare below. Invoke them with your agent's syntax: `$name` in Codex, `/name` in Claude Code and Cursor.
+
+- Use `create-job-leads` to research, compare, or lightly triage roles. Do not create branches, Notion cards, or tailored materials during lead triage.
+- Use `job-picker` to rank or inspect existing Notion application cards.
+- Use `job-application` when the user chooses to apply, tailor materials, track an active application, or prepare submission instructions.
 
 ## Shared Rules
 

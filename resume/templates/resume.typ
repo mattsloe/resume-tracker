@@ -21,7 +21,7 @@
     margin: (x: 0.62in, y: 0.55in),
   )
   set text(
-    font: ("Helvetica Neue", "Arial"),
+    font: ("Helvetica Neue", "Arial", "Liberation Sans"),
     size: 10.15pt,
     fill: ink,
   )

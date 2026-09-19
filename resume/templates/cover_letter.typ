@@ -4,7 +4,7 @@
 // why these particular spacing/font values matter.
 
 #set page(width: 8.5in, height: 11in, margin: (x: 0.9in, y: 0.8in))
-#set text(font: ("Charter", "Times New Roman", "Times"), size: 11pt, fill: rgb("#111827"))
+#set text(font: ("Charter", "Times New Roman", "Times", "Liberation Serif"), size: 11pt, fill: rgb("#111827"))
 #set par(leading: 0.45em, spacing: 0.9em, justify: false)
 
 #text(size: 17pt, weight: "bold")[Matt Loera] \

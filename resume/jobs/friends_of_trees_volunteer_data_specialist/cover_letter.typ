@@ -7,7 +7,7 @@
 )
 
 #set text(
-  font: ("Charter", "Times New Roman", "Times"),
+  font: ("Charter", "Times New Roman", "Times", "Liberation Serif"),
   size: 10pt,
   fill: ink,
 )

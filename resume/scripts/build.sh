@@ -268,7 +268,9 @@ done < "$SOURCE_FILE"
 flush_entry
 
 cat > "$WRAPPER_FILE" <<EOF
-#import "/templates/resume.typ": render_resume
+#import "/templates/resume.typ": render_resume, page_style
+
+#show: page_style
 
 #render_resume(
   "$(escape_typst "$NAME")",

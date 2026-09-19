@@ -29,6 +29,41 @@ Do not require all details up front. Start with what the user gave, infer what i
 - Check whether a matching Notion card exists before creating a branch.
 - If there is no matching card, create one.
 - Keep the card aligned with the current stage when the user asks for updates.
+- Treat the Discord job feed as a lightweight activity stream only. It should summarize progress, not replace Notion tracking.
+
+## Discord Feed
+
+If `DISCORD_JOB_FEED_WEBHOOK_URL` is configured, use `resume/scripts/discord_job_feed.sh` to post useful milestones. Keep posts short, concrete, and written for the user scanning a Discord channel.
+
+Always post once at the end of a completed skill run when the run made meaningful application progress. Choose the event that best describes the final state reached during that run. If the run is blocked, purely informational, or only asks the user for missing intake details, do not post until progress is actually made.
+
+Use these events:
+
+- `started`: after intake is complete and the application workflow begins.
+- `tailoring`: when tailoring work begins or when a substantial revision is made.
+- `built`: when a resume or cover-letter PDF has been built or validated.
+- `ready`: when the user has everything needed to apply.
+- `applied`: only after the user confirms submission.
+- `follow-up`: when there is a dated or concrete follow-up action.
+- `interviewing`: when the application moves into an interview stage.
+- `closed`: when a role is closed, rejected, withdrawn, or deprioritized.
+
+If a single run crosses multiple major stages, posting one final-state message is usually enough. Add a second post only for a genuinely important intermediate milestone the user would want in the feed, such as `ready` followed by user-confirmed `applied`.
+
+Load the local ignored environment file before posting:
+
+```bash
+set -a; source .env; set +a
+resume/scripts/discord_job_feed.sh \
+  --event ready \
+  --company "Company" \
+  --role "Role" \
+  --stage "Ready to Apply" \
+  --url "https://example.com/job" \
+  --message "Resume PDF built; user needs to submit through the company portal."
+```
+
+Do not expose secrets in Discord messages. Do not post the full webhook URL. Do not post for every tiny edit.
 
 ## Posting Verification
 
@@ -93,6 +128,7 @@ For each pass:
 5. Update the cover letter or email draft when applicable.
 6. Build or validate generated artifacts when the repo provides a build path.
 7. Incorporate user feedback.
+8. Post a Discord feed milestone if the pass changes the application's state.
 
 Keep commits scoped where practical:
 
@@ -121,3 +157,4 @@ When the application is complete:
 3. Cherry-pick only reusable master-resume commits back to `main`.
 4. Leave job-specific application history on its application branch unless the user asks otherwise.
 5. Confirm the Notion card reflects the final status.
+6. Post the final Discord feed milestone for the run if meaningful progress was made and a post has not already been sent.

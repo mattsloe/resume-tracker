@@ -62,3 +62,37 @@ Important boundaries:
 
 These names are Codex skill triggers, but the files are regular Markdown and can
 be copied into any LLM session as instructions.
+
+## Discord Job Feed
+
+The repo can post lightweight activity updates to a Discord channel through a
+channel webhook. Keep the webhook URL out of git:
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` locally and set:
+
+```bash
+DISCORD_JOB_FEED_WEBHOOK_URL="https://discord.com/api/webhooks/..."
+```
+
+Post a workflow milestone with:
+
+```bash
+set -a; source .env; set +a
+resume/scripts/discord_job_feed.sh \
+  --event started \
+  --company "Acme" \
+  --role "Software Engineer" \
+  --stage "Tailoring" \
+  --message "Created the application branch and saved the verified posting."
+```
+
+Supported events are `lead`, `started`, `tailoring`, `built`, `ready`,
+`applied`, `follow-up`, `interviewing`, `closed`, `updated`, and `note`.
+
+The repo skills are configured to post once when a skill run completes meaningful
+progress. Automated polling is optional; skill completion posts are the preferred
+way to keep the feed accurate without duplicate or inferred updates.

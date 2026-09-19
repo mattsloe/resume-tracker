@@ -11,6 +11,40 @@ If the user shares job links as leads, prospects, or jobs to review without expl
 - The Notion `Job Applications` page is the source of truth for application tracking.
 - At intake, check whether a Notion card already exists for the role. If it does not, create one before resume tailoring starts.
 - If the user provides a niche job link such as Handshake, Indeed, LinkedIn, or a recruiter page, try to find the canonical posting on the company's careers site and use that as the primary job source when available.
+- The Discord job feed is an activity stream only, not a source of truth. Post concise milestones there when `DISCORD_JOB_FEED_WEBHOOK_URL` is configured.
+
+## Discord Feed
+
+Use `resume/scripts/discord_job_feed.sh` to post human-readable workflow milestones to Discord. Never write the webhook URL into tracked files; load it from the local environment or `.env`.
+
+For skill-driven work, the default behavior is to post once when the skill run completes meaningful progress. Prefer one final-state post over many small updates. Do not post for blocked runs, read-only analysis, or prompts that are still waiting for user input.
+
+Recommended events:
+
+- `lead`: a role is worth keeping warm after lead triage.
+- `started`: an application workflow begins.
+- `tailoring`: resume or cover-letter tailoring starts or materially changes.
+- `built`: a PDF artifact is generated or validated.
+- `ready`: materials are ready and the user needs to submit.
+- `applied`: the user confirms the application was submitted.
+- `follow-up`: a follow-up action is needed.
+- `interviewing`: the application moves into an interview stage.
+- `closed`: the role is closed, rejected, withdrawn, or no longer worth pursuing.
+
+Automated Notion monitoring is optional and should remain paused unless the user explicitly wants polling. Skill completion posts are the preferred feed path.
+
+Example:
+
+```bash
+set -a; source .env; set +a
+resume/scripts/discord_job_feed.sh \
+  --event started \
+  --company "Acme" \
+  --role "Software Engineer" \
+  --stage "Tailoring" \
+  --url "https://example.com/job" \
+  --message "Created the application branch and saved the verified posting."
+```
 
 ## Intake Before Branching
 
@@ -50,6 +84,7 @@ If the user has not provided optional personalized details, proceed with the res
 4. Build or validate generated artifacts when the repo provides a build path.
 5. Iterate based on user feedback.
 6. Keep commits scoped: job analysis, resume tailoring, cover letter, final polish, and master resume improvements as separate commits where practical.
+7. Post Discord feed milestones when they help the user keep track of progress.
 
 ## Apply Step
 

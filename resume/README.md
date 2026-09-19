@@ -18,14 +18,14 @@ resume/
       job_posting.md
       tailored_resume.md
   templates/
+    application_state.md
     resume.typ
   scripts/
     build.sh
   exports/
   prompts/
-    tailor_resume.md
     rewrite_bullets.md
-    ats_keyword_check.md
+    legacy/
 ```
 
 ## Install Typst
@@ -161,62 +161,27 @@ Helpful commit boundaries:
 
 ## Application Workflow
 
-Use the Notion `Job Applications` page as the source of truth for tracking.
-
-For a guided workflow, start a Codex prompt with:
+For an active application, invoke the shared skill using your agent's syntax:
 
 ```text
-$job-application <job link or company + role>
+Codex:        $job-application <job link or company + role>
+Claude Code: /job-application <job link or company + role>
+Cursor:      /job-application <job link or company + role>
 ```
 
-This repo includes a `job-application` skill for short mobile-friendly starts. You can add fit notes later in the same thread.
+The shared `job-application` skill handles intake, Notion tracking, branch setup, strategy, drafting, builds, and submission. Codex and Cursor discover the canonical skills in `.agents/skills/`; Claude Code uses links under `.claude/skills/`. Each job folder includes `application_state.md`, copied from `templates/application_state.md`, so later turns can resume from `next_action` without reconstructing the workflow.
 
-Before creating a job branch:
+Use `create-job-leads` for research before choosing a role, and `job-picker` to choose among existing Notion cards, with the same `$name` versus `/name` convention.
 
-1. Confirm the company, role title, and application source.
-2. Check whether a Notion card already exists. Create one if it does not.
-3. If the listing came from Handshake, Indeed, LinkedIn, or another aggregator, look for the canonical posting on the company's careers site.
-4. Capture any personalized fit details the user gives, such as why this role is a strong match.
-5. Decide whether the application likely needs a cover letter or email draft.
-
-After intake, create a job branch and folder:
+After changing shared agent instructions or skills, validate cross-agent discovery from the repository root:
 
 ```bash
-git checkout -b resume/acme-product-manager
-mkdir -p jobs/acme_product_manager
+resume/scripts/validate_agent_workflows.sh
 ```
-
-Then iterate on:
-
-- `jobs/<company>_<role>/job_posting.md`
-- `jobs/<company>_<role>/tailored_resume.md`
-- `jobs/<company>_<role>/cover_letter.typ`, when useful
-
-If tailoring uncovers a reusable improvement for `master_resume.md`, commit it separately from the job-specific files. That keeps the master-resume commit easy to cherry-pick back to `main` after the application is complete.
-
-When the materials are final, answer the "how do I apply?" step with:
-
-- the best application URL or email path
-- the exact materials to submit
-- an application email draft when applicable
-- any manual fields the user must complete
-- the Notion status update that should happen
-
-After submission, return to `main` when requested and cherry-pick only reusable master-resume commits. Leave job-specific application history on the application branch unless there is a reason to merge it.
 
 ## Suggested AI Workflows
 
-### 1. Tailor from a job posting
-
-Give an AI tool:
-
-- `master_resume.md`
-- `jobs/<company>/job_posting.md`
-- `prompts/tailor_resume.md`
-
-Ask it to draft `jobs/<company>/tailored_resume.md` using the same Markdown structure.
-
-### 2. Rewrite bullets without sounding fake
+### Rewrite bullets without sounding fake
 
 Use:
 
@@ -225,17 +190,7 @@ Use:
 
 Ask for 3 to 5 honest variants of a specific bullet, then choose the one that still sounds like you.
 
-### 3. ATS keyword pass
-
-Use:
-
-- `jobs/<company>/job_posting.md`
-- `jobs/<company>/tailored_resume.md`
-- `prompts/ats_keyword_check.md`
-
-Ask for missing keywords, weak phrasing, and truthful insertion opportunities.
-
-### 4. Industry tone adjustment
+### Industry tone adjustment
 
 Ask the AI to keep the facts fixed while shifting tone for:
 
@@ -245,7 +200,7 @@ Ask the AI to keep the facts fixed while shifting tone for:
 - operations-heavy role
 - mission-driven nonprofit
 
-The prompts are written to protect specificity and authentic voice over generic corporate filler.
+The active prompt protects specificity and authentic voice. Superseded workflow prompts remain under `prompts/legacy/` for reference; the shared `job-application` skill replaces them.
 
 ## Editing Guidance
 

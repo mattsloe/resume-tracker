@@ -1,137 +1,46 @@
 ---
 name: create-job-leads
-description: Use when the user wants to collect, research, compare, rank, or lightly triage job leads before deciding whether to apply. Trigger for prompts that share job links as leads, prospects, saved jobs, roles to review, companies to research, or requests to find good-fit openings. This skill prepares apply-ready lead summaries without starting the job-application workflow, creating branches, creating Notion cards, tailoring resumes, or drafting application materials unless the user explicitly asks to apply.
+description: Research, compare, rank, or lightly triage job leads before deciding whether to apply. Produces apply-ready lead summaries without creating application tracking or materials unless the user explicitly asks to apply.
 ---
 
 # Create Job Leads
 
-Use this skill to turn one or more job leads into a clear shortlist: what the role is, whether it is worth pursuing, why it fits, and what would be needed to apply.
+Turn job links or search criteria into a concise, evidence-based shortlist.
 
 ## Boundary
 
-Treat this as lead generation or lightweight triage, not an application workflow.
-
-Do not:
-
-- create a Git branch
-- create or update a Notion application card
-- create files under `resume/jobs/`
-- tailor `resume/master_resume.md`
-- draft `tailored_resume.md`, cover letters, or application emails
-- update application statuses
-
-If the user explicitly asks to apply, start the `$job-application` workflow instead.
+This is lead triage, not an application workflow. Do not create Git branches, Notion application cards, job folders, tailored materials, emails, or status updates. If the user chooses a role and asks to apply, read [references/handoff.md](references/handoff.md).
 
 ## Intake
 
-Accept minimal prompts such as:
-
-```text
-$create-job-leads Review these three roles: <links>
-```
-
-```text
-Find remote data analyst roles at climate companies that look worth applying to.
-```
-
-Gather or infer:
-
-- company name
-- role title
-- job URL
-- location or remote policy
-- seniority and employment type
-- deadline, closing date, or posted date when available
-- compensation when available
-- application path
-- obvious fit details and risks
-
-Ask a question only when the missing detail changes the search or ranking meaningfully, such as target role family, geography, seniority, or deal-breakers.
+Gather or infer company, role, URL, location or remote policy, seniority, employment type, deadline or posting date, compensation, application path, fit signals, and deal-breakers. Ask only when missing search criteria would materially change the result.
 
 ## Research
 
-When the user gives job links, inspect each lead and prefer the canonical company careers posting over aggregator pages such as LinkedIn, Indeed, Handshake, Wellfound, recruiter pages, or school boards.
+- Prefer a live employer careers posting over LinkedIn, Indeed, Handshake, recruiter pages, or school boards.
+- Verify that selected roles appear open.
+- Extract core responsibilities, required and preferred qualifications, ATS vocabulary, location, work authorization signals, compensation, and required materials.
+- Flag stale, duplicate, closed, questionable, or aggregator-only postings.
 
-When the user asks to find leads, search current postings and prioritize official company career pages. Because postings change frequently, verify that each selected role appears open before presenting it.
+Compare against candidate context only when supported by the repository or conversation. Never invent credentials, experience, metrics, tools, work authorization, or preferences.
 
-For each role, extract:
+## Triage
 
-- company and role title
-- canonical posting URL
-- original source URL, if different
-- core responsibilities
-- required and preferred qualifications
-- ATS keywords and tools
-- location, remote/hybrid expectations, and work authorization signals
-- compensation, if listed
-- application requirements, such as resume, cover letter, portfolio, referrals, or assessments
-- concerns, such as closed posting, seniority mismatch, location mismatch, salary mismatch, unclear requirements, or questionable source
+Classify each role:
 
-## Fit Triage
+- `Strong lead`: clear fit, credible posting, usable application path
+- `Possible lead`: plausible fit with meaningful unknowns or gaps
+- `Low priority`: weak alignment, stale source, or better alternatives exist
+- `Skip`: closed, unavailable, clearly mismatched, or not a real posting
 
-Compare the posting against known resume/project context only when available in the repo or conversation. Do not invent facts, credentials, metrics, tools, degrees, or work authorization.
-
-Classify each lead:
-
-- `Strong lead`: clear fit, credible posting, application path is usable
-- `Possible lead`: some fit but has unknowns or weaker alignment
-- `Low priority`: meaningful mismatch, weak role quality, duplicate, stale, or poor source
-- `Skip`: closed, unavailable, obvious mismatch, or not a real posting
-
-Use concise reasons. Favor evidence from the posting and known candidate context over generic enthusiasm.
+Rank using posting evidence and known candidate context. Keep reasons concrete and surface the largest risk.
 
 ## Output
 
-For a small batch, present a ranked list with:
+For each worthwhile role, provide company and title, recommendation, strongest fit, main gap or risk, canonical URL, likely materials, and next action. Rank small batches; group larger batches into `apply soon`, `keep warm`, `needs more info`, and `skip`.
 
-- rank
-- company and role
-- recommendation
-- key fit reasons
-- gaps or risks
-- canonical apply URL
-- materials likely needed
-- next action
+End with the best practical next step. Do not begin application work without an explicit request.
 
-For larger batches, group into:
+## Conditional Tracking
 
-- apply soon
-- keep warm
-- skip
-- needs more info
-
-End with a practical next step, such as which role should move into `$job-application`, what detail to verify, or which search filter to adjust.
-
-## Discord Feed
-
-At the end of a completed lead-review run, if `DISCORD_JOB_FEED_WEBHOOK_URL` is configured, post a `lead` event with `resume/scripts/discord_job_feed.sh` for each strong or notable lead that the user is likely to track. Keep the message short and useful: recommendation, main fit reason, and main risk.
-
-Post after the user-facing lead summary is complete, not before. If the run is exploratory, blocked, or waiting for the user to choose search criteria, do not post yet.
-
-Do not post low-priority or skipped leads unless the user explicitly wants every reviewed role in the feed. Do not post the same lead repeatedly if it is already in Notion or has already been announced.
-
-Use the strongest available event summary:
-
-```bash
-set -a; source .env; set +a
-resume/scripts/discord_job_feed.sh \
-  --event lead \
-  --company "Company" \
-  --role "Role" \
-  --url "https://example.com/job" \
-  --message "Strong lead: short fit reason. Risk: short concern."
-```
-
-## Handoff To Application
-
-When the user chooses a lead and asks to apply, transition to `$job-application` and carry forward:
-
-- company
-- role title
-- canonical posting URL
-- original source URL
-- fit notes
-- concerns and missing details
-- likely materials needed
-
-At that point, the application workflow can create the Notion card, branch, job folder, posting file, tailored resume, and cover letter.
+Read [references/tracking.md](references/tracking.md) only when the run produced strong leads and Discord posting is configured or requested. Read [references/handoff.md](references/handoff.md) only when the user asks to begin an application.

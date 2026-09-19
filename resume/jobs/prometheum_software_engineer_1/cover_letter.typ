@@ -15,13 +15,13 @@ Dear Hiring Team,
 
 I am applying for the Software Engineer 1 (Full-Stack) position at Prometheum. I completed a B.S. in Computer Science at Portland State University in Winter 2025 and have spent the time since building a full-stack application end to end. That project is the strongest evidence I can offer for the qualification this posting puts at its center: knowing when an AI assistant is wrong, or unnecessary.
 
-The application converts spoken bar inventory counts into structured records in a relational database. The obvious build is to hand every transcribed line to a model. That is also the wrong build — most lines are routine matches against a known inventory sheet and require no inference at all. I designed a command-driven parsing workflow to resolve those against the sheet directly and reserved the model for genuinely ambiguous input, which cut AI API calls by roughly 80 percent. I hold generated code to the same standard: I use it as a first draft, and I do not ship it until I can explain why it does what it does. The application is written in TypeScript, React, and Python, and versioned in Git.
+The application converts spoken bar inventory counts into structured records in a relational database. Most lines in that input are routine matches against a known inventory sheet, so I designed a command-driven parsing workflow to resolve them against the sheet directly and reserved the model for genuinely ambiguous input. That workflow improved the application's parsing while reducing the AI API calls required to interpret spoken input by roughly 80 percent. It is written in TypeScript, React, and Python, and versioned in Git.
 
 Prometheum is where I want to do that work, specifically because your team treats AI-assisted development as standard practice rather than as something engineers do quietly. I learn faster where the tooling is explicit and the review standards are real, and I would rather ramp up on production systems with a team that has already decided how it expects those tools to be used.
 
 My coursework in systems programming, data structures, and SQL databases is what lets me reason about a request as it moves from the front end through an API into a database, rather than pattern-matching familiar code. I do not have a finance or blockchain background, and I intend to learn that domain the way the posting describes learning the system: starting with small, clearly defined pieces and widening from there. Earlier work in federal grant reporting is where I learned to write documentation precise enough that other people could act on it.
 
-I would like to talk through the project in detail, including the parts I would build differently now.
+I would welcome the chance to talk through the project in more detail.
 
 Sincerely, \
 Matt Loera

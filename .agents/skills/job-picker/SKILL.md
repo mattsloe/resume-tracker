@@ -82,6 +82,17 @@ For a quick picker response, give:
 
 When there are no obvious apply-now cards, say so and offer the best next triage action: verify source, mark priority, update stage, or research missing requirements.
 
+## Discord Feed
+
+Do not post to Discord for ordinary read-only ranking or picker output.
+
+If the user explicitly asks to update Notion or chooses a role and asks to begin applying, post one completion event only after that meaningful action is complete:
+
+- `updated`: for a Notion triage update, such as priority/stage/source cleanup.
+- `started`: when handing off into `$job-application` and the application workflow actually begins.
+
+Use `resume/scripts/discord_job_feed.sh` with the local ignored `.env` loaded. Keep the message short and name the action that was completed. Do not post for recommendations alone.
+
 ## Handoff To Job Application
 
 When the user chooses a card and asks to apply, start `$job-application` and carry forward:

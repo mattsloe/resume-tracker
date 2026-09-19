@@ -1,0 +1,6 @@
+resume/exports/*.pdf
+!resume/exports/.gitkeep
+.env
+.env.*
+!.env.example
+.job-feed-state.json

@@ -35,7 +35,7 @@ Brings a mix of technical training, strong writing, and lived knowledge of housi
 - Combined TypeScript, React, Python, SQL, AI-assisted workflows, data cleaning, and firsthand hospitality operations experience.
 
 ## Skills
-Programming: C; C++; JavaScript; TypeScript; React; Python; HTML; SQL
+Programming: C; C++; JavaScript; TypeScript; React; Node.js; Python; HTML; SQL
 Computer Science: Systems programming; Data structures; Digital circuits; SQL databases; Continuous integration environments
 Community & Research: Community organizing; Policy research; Housing advocacy; Land use advocacy; Participatory action research; Grant writing; Federal grant reporting support; Transportation advocacy
 Tools: Google Suite; Slack; Trello; Canva; Instagram

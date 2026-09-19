@@ -102,6 +102,26 @@ For larger batches, group into:
 
 End with a practical next step, such as which role should move into `$job-application`, what detail to verify, or which search filter to adjust.
 
+## Discord Feed
+
+At the end of a completed lead-review run, if `DISCORD_JOB_FEED_WEBHOOK_URL` is configured, post a `lead` event with `resume/scripts/discord_job_feed.sh` for each strong or notable lead that the user is likely to track. Keep the message short and useful: recommendation, main fit reason, and main risk.
+
+Post after the user-facing lead summary is complete, not before. If the run is exploratory, blocked, or waiting for the user to choose search criteria, do not post yet.
+
+Do not post low-priority or skipped leads unless the user explicitly wants every reviewed role in the feed. Do not post the same lead repeatedly if it is already in Notion or has already been announced.
+
+Use the strongest available event summary:
+
+```bash
+set -a; source .env; set +a
+resume/scripts/discord_job_feed.sh \
+  --event lead \
+  --company "Company" \
+  --role "Role" \
+  --url "https://example.com/job" \
+  --message "Strong lead: short fit reason. Risk: short concern."
+```
+
 ## Handoff To Application
 
 When the user chooses a lead and asks to apply, transition to `$job-application` and carry forward:

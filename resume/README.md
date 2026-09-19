@@ -262,6 +262,9 @@ generating a tailored resume or cover letter.
 
 ### Cover letters
 
+These are typography notes only. For what the letter should actually
+say and how it should sound, follow "Cover Letter Voice" in `AGENTS.md`.
+
 - Start from `templates/cover_letter.typ` and copy it into the job folder
   as `cover_letter.typ`, then replace the placeholders.
 - Use `#set par(leading: 0.45em, spacing: 0.9em, justify: false)` at 11pt

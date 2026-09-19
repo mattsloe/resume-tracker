@@ -96,6 +96,7 @@ After intake:
 4. Write `strategy.md` (see Strategy below) before drafting anything else.
 5. Draft or update `tailored_resume.md` from `resume/master_resume.md`, guided by `strategy.md`.
 6. Add `cover_letter.typ` when useful for the role or application channel, also guided by `strategy.md`.
+   Follow the voice rules in `AGENTS.md` ("Cover Letter Voice") when drafting or revising it.
 
 ## Strategy
 

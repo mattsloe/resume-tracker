@@ -80,6 +80,205 @@ If the user has not provided optional personalized details, proceed with the res
 - Keep that commit cherry-pickable back to `main`.
 - Do not mix master resume improvements with job-specific resume or cover-letter changes.
 
+## Cover Letter Voice
+
+When writing or revising cover letters, optimize for specificity, natural
+voice, and credibility, not generic professionalism.
+
+### Matt's voice
+
+Write like an intelligent, grounded person talking to another intelligent
+person. The preferred tone is:
+
+- warm but not gushy
+- confident without sounding self-important
+- conversational without being overly casual
+- direct and concise
+- thoughtful and specific
+- slightly informal when appropriate
+- sincere rather than performatively enthusiastic
+
+Sentence structure should vary naturally. Some sentences can be short. Avoid
+making every paragraph feel perfectly symmetrical or polished to the point
+that it sounds machine-generated.
+
+He would rather sound like a real person with a clear reason for applying
+than like an idealized corporate applicant.
+
+### Avoid "cover letter voice"
+
+Do not default to standard AI/corporate cover-letter language. Avoid phrases
+and constructions like:
+
+- "I am excited to apply..."
+- "I am thrilled at the opportunity..."
+- "I believe my skills and experience make me an ideal candidate..."
+- "I am confident that I would be a valuable asset..."
+- "I am eager to leverage my..."
+- "This opportunity strongly aligns with..."
+- "Throughout my career..."
+- "I would welcome the opportunity to..."
+- "I am passionate about..."
+- "dynamic team"
+- "fast-paced environment"
+- "unique blend of..."
+- "proven track record"
+- "results-driven"
+- "leverage my skills"
+- "seamlessly"
+- "delve"
+- "furthermore"
+
+Do not substitute one corporate cliche for another. Do not use excessive em
+dashes. Do not use inflated adjectives to make ordinary experience sound
+impressive.
+
+### Do not summarize the resume
+
+A cover letter is not a prose version of the resume. Assume the employer
+already has the resume.
+
+Instead, identify the 2-3 pieces of experience most relevant to what this
+particular employer needs and build the letter around those. Explain
+connections that are not obvious from the resume.
+
+A strong paragraph should usually answer some version of "why does this
+experience matter for this job?" rather than merely "what have I done?"
+
+### Start with substance
+
+Do not begin with "I am writing to apply for the [position] at [company]."
+They already know why they are reading the letter.
+
+Start with something more meaningful: a connection to the work, a
+particularly relevant piece of experience, or a concise explanation of why
+this role makes sense. The opening should still feel natural. Do not
+manufacture a dramatic hook.
+
+### Match the actual job
+
+Read the job posting closely before drafting. Identify:
+
+1. What problems they appear to need this person to solve.
+2. What capabilities they emphasize repeatedly.
+3. Which parts of Matt's background provide the strongest evidence for those
+   capabilities.
+4. What might make his background unusual or useful compared with a
+   conventional candidate.
+
+Prioritize those connections. Do not try to address every bullet point in
+the posting.
+
+### Do not invent anything
+
+Never fabricate experience, accomplishments, technologies, responsibilities,
+metrics, motivations, personal connections to the company, or enthusiasm
+that is not supported by information Matt provided.
+
+If the available information does not establish something, either omit it or
+state it modestly. Do not turn "I have some experience with X" into "I have
+extensive expertise in X."
+
+### Calibrate confidence carefully
+
+Present the experience positively, but do not oversell it. Prefer concrete
+evidence over adjectives.
+
+Prefer:
+
+> My systems coursework gave me experience working directly in C and
+> thinking about memory, processes, and lower-level behavior.
+
+over:
+
+> I possess deep expertise in systems programming and low-level
+> architecture.
+
+### Keep the background coherent
+
+Matt's experience spans technical work, school, hospitality/service work,
+community involvement, and other areas. Do not treat nontechnical work as
+irrelevant just because the role is technical.
+
+When appropriate, use it to demonstrate working calmly under pressure,
+communicating with many kinds of people, collaboration, troubleshooting,
+reliability, learning quickly, dealing with ambiguity, or taking ownership.
+
+But do not force those connections when they are not relevant.
+
+### Avoid fake intimacy with the employer
+
+Do not write as though Matt has a deep emotional connection to a company
+simply because he is applying there.
+
+Bad: "Your mission has long deeply resonated with me."
+
+Better: "I'm particularly interested in the way this role combines X and Y."
+
+Only mention a company's mission, product, culture, or community impact when
+there is something specific and defensible to say about it.
+
+### Paragraph structure
+
+A typical letter should be roughly 300-450 words, unless the application
+suggests otherwise. Usually aim for a short substantive opening, 2-3 body
+paragraphs, and a short closing.
+
+Paragraphs should have distinct purposes rather than repeating the same
+claim in different language. Do not force a five-paragraph essay structure.
+
+### Closing
+
+Keep the ending simple. Do not end with several sentences of ceremonial
+gratitude and enthusiasm. This level of formality is appropriate:
+
+> I'd be glad to talk more about how my experience could fit the role.
+> Thanks for taking the time to consider my application.
+
+Adapt naturally rather than repeating that exact wording every time.
+
+### Editing test
+
+Before returning a final cover letter, silently review it and ask:
+
+1. Could this letter have been written for 100 other applicants? If yes,
+   make it more specific.
+2. Does any sentence merely restate something already obvious from the
+   resume? If yes, improve it or remove it.
+3. Does anything sound like LinkedIn, HR, or AI-generated prose? Rewrite it
+   in plainer language.
+4. Am I claiming more than the evidence supports? Tone it down.
+5. Does the letter explain why this person's experience fits this particular
+   job? If not, strengthen that connection.
+6. Would a normal person plausibly say these sentences aloud? If not,
+   rewrite them.
+
+### When source material is available
+
+When the repo contains a resume, job description, previous cover letters,
+application notes, or answers Matt has personally written, treat his own
+writing as the strongest source for his voice.
+
+Study recurring features such as sentence length, vocabulary, level of
+formality, humor or understatement, how directly he makes claims, and how he
+describes his own accomplishments. Imitate those characteristics without
+copying awkward wording verbatim.
+
+Previous AI-generated cover letters should NOT automatically be treated as
+examples of his voice unless he has explicitly marked them as approved.
+
+### Default goal
+
+The final result should make the reader think: "This person understands what
+we're looking for, has a believable reason they could do the work, and
+sounds like someone I could actually talk to."
+
+It should not make the reader think: "This is a beautifully written cover
+letter."
+
+The writing exists to make the candidate legible, specific, and memorable,
+not to call attention to itself.
+
 ## Iteration Loop
 
 1. Analyze the job posting for responsibilities, priorities, language, and ATS keywords.

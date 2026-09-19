@@ -18,53 +18,53 @@
   set page(
     width: 8.5in,
     height: 11in,
-    margin: (x: 0.55in, y: 0.4in),
+    margin: (x: 0.75in, y: 0.65in),
   )
   set text(
     font: ("Helvetica Neue", "Arial"),
-    size: 10pt,
+    size: 10.5pt,
     fill: ink,
   )
   set par(
     justify: false,
-    leading: 0.15em,
-    spacing: 0.4em,
+    leading: 0.3em,
+    spacing: 0.55em,
   )
   set heading(numbering: none)
   set list(
     tight: true,
     marker: [•],
     body-indent: 0.55em,
-    spacing: 0.18em,
+    spacing: 0.3em,
   )
   // Typst's block() default above/below (~1.2em each) silently stacks
   // between every summary paragraph and every skills line, which reads as
   // much bigger gaps than the section-spacing values below suggest. Pin it
   // to something comfortable instead.
-  set block(above: 0.3em, below: 0.3em)
+  set block(above: 0.5em, below: 0.5em)
   body
 }
 
 #let section_heading(title) = [
-  #v(0.55em)
+  #v(0.9em)
   #align(center)[
-    #text(size: 8.4pt, weight: 700, tracking: 0.08em, fill: muted)[#title]
-    #v(0.12em)
+    #text(size: 8.6pt, weight: 700, tracking: 0.08em, fill: muted)[#title]
+    #v(0.15em)
     #line(length: 100%, stroke: 0.7pt + rule)
   ]
-  #v(0.2em)
+  #v(0.3em)
 ]
 
 #let resume_header(name, headline, contact) = [
   #align(center)[
-    #text(size: 19pt, weight: 700, tracking: 0.01em)[#name]
+    #text(size: 22pt, weight: 700, tracking: 0.01em)[#name]
     #if headline != "" [
-      #v(0.1em)
-      #text(size: 10.4pt, fill: muted)[#headline]
+      #v(0.15em)
+      #text(size: 11pt, fill: muted)[#headline]
     ]
     #if contact != "" [
-      #v(0.15em)
-      #text(size: 9pt, fill: muted)[#contact]
+      #v(0.2em)
+      #text(size: 9.5pt, fill: muted)[#contact]
     ]
   ]
 ]
@@ -91,10 +91,10 @@
     #text(size: 9.1pt, style: "italic", fill: muted)[#item.meta]
   ]
   #if item.bullets.len() > 0 [
-    #v(0.15em)
+    #v(0.2em)
     #list(..item.bullets.map(bullet => [#bullet]))
   ]
-  #v(0.32em)
+  #v(0.55em)
 ]
 
 #let skills_block(items) = {

@@ -5,7 +5,7 @@
 #set page(
   width: 8.5in,
   height: 11in,
-  margin: (x: 0.62in, y: 0.56in),
+  margin: (x: 0.62in, y: 0.35in),
 )
 
 #set text(
@@ -17,7 +17,7 @@
 #set par(
   justify: false,
   leading: 0em,
-  spacing: 0.5em,
+  spacing: 0.4em,
 )
 
 #set heading(numbering: none)
@@ -25,28 +25,28 @@
   tight: true,
   marker: [•],
   body-indent: 0.55em,
-  spacing: 0.25em,
+  spacing: 0.2em,
 )
 
 #let section_heading(title) = [
-  #v(0.95em)
+  #v(0.55em)
   #align(center)[
     #text(size: 8.2pt, weight: 700, tracking: 0.08em, fill: muted)[#title]
-    #v(0.18em)
+    #v(0.1em)
     #line(length: 100%, stroke: 0.7pt + rule)
   ]
-  #v(0.38em)
+  #v(0.16em)
 ]
 
 #let resume_header(name, headline, contact) = [
   #align(center)[
-    #text(size: 20pt, weight: 700, tracking: 0.01em)[#name]
+    #text(size: 18pt, weight: 700, tracking: 0.01em)[#name]
     #if headline != "" [
-      #v(0.16em)
+      #v(0.1em)
       #text(size: 10.4pt, fill: muted)[#headline]
     ]
     #if contact != "" [
-      #v(0.22em)
+      #v(0.14em)
       #text(size: 9pt, fill: muted)[#contact]
     ]
   ]
@@ -76,7 +76,7 @@
     #v(0.14em)
     #list(..item.bullets.map(bullet => [#bullet]))
   ]
-  #v(0.48em)
+  #v(0.26em)
 ]
 
 #let skills_block(items) = {

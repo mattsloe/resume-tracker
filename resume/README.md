@@ -255,6 +255,41 @@ The prompts are written to protect specificity and authentic voice over generic 
 - Prefer concrete verbs, scope, and outcomes over abstract buzzwords.
 - Never let AI invent metrics, tools, ownership, or achievements.
 
+## Style Notes
+
+Learned from formatting passes on real applications — check these before
+generating a tailored resume or cover letter.
+
+### Cover letters
+
+- Start from `templates/cover_letter.typ` and copy it into the job folder
+  as `cover_letter.typ`, then replace the placeholders.
+- Use `#set par(leading: 0.45em, spacing: 0.9em, justify: false)` at 11pt
+  in a serif font (Charter/Times). An earlier template used
+  `leading: 0.2em` with a manual hanging-indent `paragraph()` block —
+  that reads as cramped, with wrapped lines running together. Plain
+  paragraphs separated by a blank line, at the wider leading/spacing
+  above, read cleanly.
+- Keep the header simple: bold name, then a contact line underneath. No
+  need to hand-roll date/recipient line-grouping helpers.
+
+### Resumes (one page, for early-career/concise roles)
+
+- `templates/resume.typ` section/entry spacing is tuned to fit roughly:
+  a 2-3 line summary, 2 experience entries (1-2 bullets each), one
+  Projects entry (1 tight bullet), a 2-3 line Skills block, and Education
+  with no bullets — on one page. Anything denser than that will likely
+  spill to a second page; trim content rather than re-loosening the
+  template.
+- Don't restate the same facts twice across sections. If Skills already
+  lists the relevant coursework/tools (e.g. "SQL databases; Digital
+  circuits"), don't also add an Education coursework bullet — it's the
+  first thing to cut when a resume runs long.
+- When a Projects entry has more to say than fits in one bullet, prefer
+  one longer combined bullet over two short ones — each additional
+  bullet costs a full line plus list spacing, and entry blocks don't
+  break cleanly across a page boundary.
+
 ## Notes
 
 - This v1 intentionally avoids YAML, JSON, databases, and heavy automation.

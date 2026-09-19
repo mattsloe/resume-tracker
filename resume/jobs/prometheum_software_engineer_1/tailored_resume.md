@@ -3,7 +3,7 @@ Full-stack software engineer (TypeScript, React, SQL) with AI-assisted developme
 Portland, OR · mattsloe@gmail.com · 214-336-1774 · mash-web.com
 
 ## Summary
-Computer science graduate (B.S., Winter 2025) with full-stack development experience across TypeScript, React, JavaScript, Python, and SQL/relational databases, using Git version control and AI coding assistants with careful review of their output. Comfortable working across front end and back end, debugging request flows end to end, and communicating clearly under fast-paced, detail-driven conditions.
+Computer science graduate (B.S., Winter 2025) with full-stack development experience across TypeScript, React, Node.js, JavaScript, Python, and SQL/relational databases, using Git version control and AI coding assistants with careful review of their output. Comfortable working across front end and back end, debugging request flows end to end, and communicating clearly under fast-paced, detail-driven conditions.
 
 ## Experience
 ### Future Generations Collaborative | Partner | Portland, OR | May 2021-September 2024
@@ -21,7 +21,7 @@ Computer science graduate (B.S., Winter 2025) with full-stack development experi
 - Developed and versioned the project with Git across iterative feature and bug-fix commits.
 
 ## Skills
-Programming & Full-Stack: JavaScript; TypeScript; React; Python; SQL; C; C++; HTML; Relational databases; Git / version control
+Programming & Full-Stack: JavaScript; TypeScript; React; Node.js; Python; SQL; C; C++; HTML; Relational databases; Git / version control
 AI-Assisted Development: AI coding assistants; Reviewing AI-generated code; Prompt-driven workflows
 Computer Science: Systems programming; Data structures; Digital circuits
 Strengths: Clear written communication; Quick adaptation; Detail-oriented; Data collection

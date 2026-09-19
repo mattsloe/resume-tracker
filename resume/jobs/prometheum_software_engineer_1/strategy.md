@@ -22,7 +22,7 @@ degree.
 | Requirement | Evidence | Resume treatment |
 |---|---|---|
 | Up to 2 years experience | None professionally; posting is entry-level by design | Don't apologize for it; let Projects/Education carry the resume |
-| JS/TS with Node.js **or** React | TypeScript + React (Bar Inventory App) | React satisfies the "or" — do not claim Node.js, not evidenced |
+| JS/TS with Node.js **or** React | TypeScript + React (Bar Inventory App) + Node.js (confirmed by Matt: other personal/school projects) | Both sides of the "or" now covered — Node.js added to Summary and Skills |
 | Hands-on AI coding assistants + judgment to catch bad output | Bar Inventory App: AI-assisted parsing workflow, reviewed/corrected AI output, ~80% cut in AI API calls | Lead with this — it's the single best-matched requirement |
 | Relational database / SQL | SQL Databases coursework + SQL in the project | Use "SQL" and "relational database" (JD's own phrase) |
 | Git workflow competency | **Confirmed by Matt: uses git for all personal projects** | Add "Git / version control" to Skills and to the project bullets |

@@ -4,6 +4,7 @@ Use this reference only when source documents changed or the user asks for a bui
 
 ## Build
 
+- If `typst`, `pdfinfo`, or `pdftoppm` is missing, run `resume/scripts/setup_pdf_toolchain.sh` first. It is idempotent and installs the Liberation fonts the templates fall back to on Linux; without them Typst substitutes a serif face and still exits 0, so the build looks successful while rendering in the wrong typeface.
 - Use `resume/scripts/build.sh` for Markdown resumes.
 - Compile Typst cover letters through the repository's existing path.
 - Produce PDFs as submission artifacts unless another format is explicitly requested.

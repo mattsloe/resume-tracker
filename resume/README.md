@@ -35,8 +35,21 @@ Typst is required for PDF export.
 On macOS with Homebrew:
 
 ```bash
-brew install typst
+brew install typst poppler
 ```
+
+On a fresh Linux container — Claude Code on the web, CI, a new VM — run:
+
+```bash
+resume/scripts/setup_pdf_toolchain.sh
+```
+
+That installs Typst, `poppler-utils` for the layout checks, and the Liberation
+fonts. The fonts are not optional: the templates ask for Helvetica Neue, Arial,
+Charter, and Times New Roman, none of which exist on Linux, and without a
+fallback installed Typst silently substitutes a serif face and still exits 0 —
+so the build reports success while rendering in the wrong typeface. The script
+is safe to re-run and leaves anything already installed alone.
 
 Other install options are available in the official Typst compiler docs:
 
@@ -274,8 +287,8 @@ pdftoppm -png -r 100 resume/exports/<file>.pdf /tmp/preview
 
 Then view `/tmp/preview-1.png` (etc.) directly, and cross-check the page
 size with `pdfinfo resume/exports/<file>.pdf`. `poppler-utils` provides
-both `pdftoppm` and `pdfinfo`; install it if missing
-(`apt-get install -y poppler-utils`).
+both `pdftoppm` and `pdfinfo`; run `resume/scripts/setup_pdf_toolchain.sh`
+if either is missing.
 
 ### ATS-targeted roles (technical screening, keyword-sensitive postings)
 

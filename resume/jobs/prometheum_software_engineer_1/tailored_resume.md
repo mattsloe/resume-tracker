@@ -3,7 +3,7 @@ Full-stack software engineer with AI-assisted development experience
 Portland, OR · mattsloe@gmail.com · 214-336-1774 · mash-web.com
 
 ## Summary
-Computer science graduate (B.S., Winter 2025) with full-stack project experience across TypeScript, React, Python, and SQL, including hands-on use of AI coding tools paired with careful review of their output, quick adaptation to new systems, and clear communication in fast-paced, detail-driven environments.
+Computer science graduate (B.S., Winter 2025) with full-stack project experience in TypeScript, React, Python, and SQL, including hands-on use of AI coding tools with careful review of their output. Adapts quickly to new systems and communicates clearly under fast-paced, detail-driven conditions.
 
 ## Experience
 ### Future Generations Collaborative | Partner | Portland, OR | May 2021-September 2024
@@ -15,8 +15,7 @@ Computer science graduate (B.S., Winter 2025) with full-stack project experience
 
 ## Projects
 ### Bar Inventory App | AI-assisted inventory workflow | 2026
-- Built a voice-to-inventory app that converts unstructured spoken inventory notes into cleaner inventory data for bar operations, using TypeScript, React, Python, and SQL.
-- Designed a command-driven parsing workflow to match voice transcription output against inventory sheet items while reducing AI API calls by roughly 80%.
+- Built a full-stack voice-to-inventory app (TypeScript, React, Python, SQL) with a command-driven parsing workflow that reduced AI API calls by roughly 80%.
 
 ## Skills
 Programming: JavaScript; TypeScript; React; Python; SQL; C; C++; HTML
@@ -25,4 +24,3 @@ Strengths: Clear written communication; Quick adaptation; Research; Data collect
 
 ## Education
 ### Portland State University | B.S. in Computer Science | Portland, OR | Winter 2025
-- Related coursework: Systems Programming, Digital Circuits, Data Structures, Web Design, and SQL Databases.

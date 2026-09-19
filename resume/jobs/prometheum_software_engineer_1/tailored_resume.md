@@ -22,7 +22,10 @@ Computer science graduate (B.S., Winter 2025) with full-stack development experi
 
 ## Skills
 Programming & Full-Stack: JavaScript; TypeScript; React; Python; SQL; C; C++; HTML; Relational databases; Git / version control
-AI-Assisted Development & Computer Science: AI coding assistants; Reviewing AI-generated code; Prompt-driven workflows; Systems programming; Data structures; Digital circuits
+AI-Assisted Development: AI coding assistants; Reviewing AI-generated code; Prompt-driven workflows
+Computer Science: Systems programming; Data structures; Digital circuits
+Strengths: Clear written communication; Quick adaptation; Detail-oriented; Data collection
 
 ## Education
 ### Portland State University | B.S. in Computer Science | Portland, OR | Winter 2025
+- Related coursework: Systems Programming, Digital Circuits, Data Structures, Web Design, and SQL Databases.

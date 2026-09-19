@@ -7,10 +7,12 @@ Computer science graduate (B.S., Winter 2025) with full-stack development experi
 
 ## Experience
 ### Future Generations Collaborative | Partner | Portland, OR | May 2021-September 2024
-- Contributed to yearly reporting and data collection connected to grant-funded program requirements, sharpening clear written communication and accountability.
+- Contributed to yearly reporting and data collection connected to grant-funded program requirements and accountability.
+- Contributed to community-based research and education work focused on Indigenous data sovereignty and housing equity.
 
 ### Punch Bowl Social | Bar Manager | Portland, OR | 2018-Present
-- Managed day-to-day restaurant operations and staff coordination in a fast-paced, detail-driven environment, adapting quickly to shifting priorities.
+- Managed day-to-day restaurant operations across bartending, customer service, staff coordination, and event support.
+- Adapted quickly across roles and shifting business needs while maintaining reliability and attention to detail.
 
 ## Projects
 ### Bar Inventory App | Full-stack, AI-assisted development | 2026
@@ -20,8 +22,7 @@ Computer science graduate (B.S., Winter 2025) with full-stack development experi
 
 ## Skills
 Programming & Full-Stack: JavaScript; TypeScript; React; Python; SQL; C; C++; HTML; Relational databases; Git / version control
-AI-Assisted Development: AI coding assistants; Reviewing AI-generated code; Prompt-driven workflows
-Computer Science & Strengths: Systems programming; Data structures; Digital circuits; Clear written communication; Detail-oriented
+AI-Assisted Development & Computer Science: AI coding assistants; Reviewing AI-generated code; Prompt-driven workflows; Systems programming; Data structures; Digital circuits
 
 ## Education
 ### Portland State University | B.S. in Computer Science | Portland, OR | Winter 2025

@@ -16,6 +16,7 @@ Brings a mix of technical training, strong writing, and lived knowledge of housi
 - Conducted community outreach and education related to equitable housing access, tenant protections, and anti-displacement work.
 - Built partnerships with local organizations focused on housing security, community engagement, and mutual support.
 - Used data and storytelling to communicate community needs in ways that aligned with Indigenous values and context.
+- Partnered with Health Share Oregon on community feedback and data collection, participated in program-improvement meetings, and facilitated a community forum connecting Health Share Oregon representatives directly with community members.
 
 ### Punch Bowl Social | Bar Manager | Portland, OR | 2018-Present
 - Managed day-to-day restaurant operations across bartending, customer service, staff coordination, and event support.
